@@ -11,10 +11,10 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class OrderServiceTest {
-    MemberService memberService = new MemberServiceImpl();
-    OrderService orderService = new OrderServiceImpl();
 
-//    AppConfig appConfig = new AppConfig();
+    AppConfig appConfig = new AppConfig();
+    MemberService memberService = appConfig.memberService();
+    OrderService orderService = appConfig.orderService();
 
     @Test
     void createOrder() {
