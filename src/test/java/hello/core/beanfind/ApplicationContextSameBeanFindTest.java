@@ -21,13 +21,13 @@ public class ApplicationContextSameBeanFindTest {
     // 이렇게 하면 SameBeanConfig.class만 들고 시작하는것
     AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(SameBeanConfig.class);
 
-    @Test
-    @DisplayName("타입으로 조회 시 같은 타입이 둘 이상 있으면. 중복 오류가 발생한다")
-    void findBeanByTypeDuplicate() {
-        MemberRepository bean = ac.getBean(MemberRepository.class);
-        assertThrows(NoUniqueBeanDefinitionException.class,
-                () -> ac.getBean(MemberRepository.class));
-    }
+//    @Test
+//    @DisplayName("타입으로 조회 시 같은 타입이 둘 이상 있으면. 중복 오류가 발생한다")
+//    void findBeanByTypeDuplicate() {
+//        MemberRepository bean = ac.getBean(MemberRepository.class);
+//        assertThrows(NoUniqueBeanDefinitionException.class,
+//                () -> ac.getBean(MemberRepository.class));
+//    }
 
     @Test
     @DisplayName("타입으로 조회 시 같은 타입이 둘 이상 있으면, 빈 이름을 지장하면 된다") // 특정 이름을 가진 '저장소1'을 픽해서 불러온 것
